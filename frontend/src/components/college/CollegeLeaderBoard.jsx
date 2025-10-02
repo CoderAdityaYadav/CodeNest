@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CollegeLeaderBoard() {
+function CollegeLeaderboard() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function CollegeLeaderBoard() {
   )
 }
 
-export default CollegeLeaderBoard
+export default CollegeLeaderboard
