@@ -15,10 +15,11 @@ function sendToken(res, token) {
     res.cookie("jwt", token, {
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: "strict",
+        secure: process.env.NODE_ENV === "production", // must be true in prod
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     });
 }
+
 export async function signup(req, res) {
     try {
         const { name, email, password, role, leetcode, gfg, github } = req.body;

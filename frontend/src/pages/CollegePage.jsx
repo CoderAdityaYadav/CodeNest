@@ -15,7 +15,7 @@ import {
     PlusCircle,
     Menu,
     ChevronDown,
-    Loader2, // Add this for loading spinner
+    Loader2, 
 } from "lucide-react";
 import {
     useGetCollegeDetailsById,
