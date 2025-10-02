@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/* Design tokens */
+@theme {
+  --color-primary: #3b82f6;
+  --color-primary-90: color-mix(in oklab, #3b82f6 90%, transparent);
+  --color-bg-light: #f9fafb;
+  --color-bg-dark: #111827;
+  --font-display: "Manrope", ui-sans-serif, system-ui;
+}
+
+/* class-based dark mode */
+@variant dark (&:where(.dark, .dark *));
+
+/* Optional helpers (variable-backed) */
+@layer utilities {
+  .btn-primary { @apply text-white bg-[--color-primary] hover:bg-[--color-primary-90]; }
+  .card-surface { @apply bg-[--color-bg-light] dark:bg-[--color-bg-dark]; }
+  .app-text { @apply text-gray-800 dark:text-gray-200; }
+  .brand-text { color: var(--color-primary); }
+}
+
+/* Safelist critical arbitrary utilities if class detection misses them */
+@source inline("bg-[--color-primary] bg-[--color-primary-90] bg-[--color-bg-light] bg-[--color-bg-dark] text-[--color-primary] focus:ring-[--color-primary]");
