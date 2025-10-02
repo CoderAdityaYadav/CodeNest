@@ -54,9 +54,6 @@ export function useLogout() {
     return useMutation({
         mutationFn: logout,
         onSuccess: () => {
-            // Clear token first
-            localStorage.removeItem("token");
-
             // Clear auth query completely
             queryClient.setQueryData(["authUser"], null);
             queryClient.removeQueries({ queryKey: ["authUser"] });
@@ -65,7 +62,6 @@ export function useLogout() {
             queryClient.clear(); // More aggressive clearing
         },
         onError: () => {
-            localStorage.removeItem("token");
             queryClient.setQueryData(["authUser"], null);
             queryClient.removeQueries({ queryKey: ["authUser"] });
         },

@@ -126,10 +126,17 @@ export async function login(req, res) {
 }
 export async function logout(req, res) {
     try {
-        res.clearCookie("jwt");
-        return res
-            .status(200)
-            .json({ success: true, message: "Logged out successfully" });
+        res.clearCookie("jwt", {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+            path: "/", 
+        });
+
+        return res.status(200).json({
+            success: true,
+            message: "Logged out successfully",
+        });
     } catch (error) {
         console.error("Error in logout:", error.message);
         res.status(500).json({
@@ -138,6 +145,7 @@ export async function logout(req, res) {
         });
     }
 }
+
 export async function me(req, res) {
     try {
         const user = await User.findById(req.user.userId).select("-password"); // userId comes from middleware
