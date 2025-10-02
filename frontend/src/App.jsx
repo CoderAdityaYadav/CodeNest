@@ -23,7 +23,7 @@ import Loading from "./components/Loading";
 import CollegePage from "./pages/CollegePage";
 import BranchPage from "./pages/BranchPage";
 import SectionPage from "./pages/SectionPage";
-import CollegeLeaderboardPage from "./pages/collegeLeaderboardPage";
+import CollegeLeaderboardPage from "./pages/CollegeLeaderboardPage";
 // import CollegeLeaderBoardPage from "./components/college/CollegeLeaderboard";
 
 const queryClient = new QueryClient({
