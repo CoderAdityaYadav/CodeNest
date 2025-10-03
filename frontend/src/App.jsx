@@ -138,7 +138,7 @@ function AppRoutes() {
             />
 
             {/* Catch all */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
     );
 }
