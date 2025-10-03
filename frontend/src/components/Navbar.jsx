@@ -114,12 +114,19 @@ export default function Navbar() {
                         <div className="flex-shrink-0">
                             <Link
                                 to="/"
-                                className="flex items-center gap-3 group">
-                                <div className="h-8 w-8 bg-blue-500 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                                className="flex items-center gap-1 group">
+                                {/* <div className="h-8 w-8 bg-blue-500 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
                                     <span className="text-white font-bold text-sm">
                                         &lt;/&gt;
                                     </span>
-                                </div>
+                                </div> */}
+                                {/* <div className="h-8 w-8 bg-blue-500 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors"> */}
+                                    <img
+                                        src="nest.png"
+                                        alt="nest logo"
+                                        className="h-15 w-15 object-contain"
+                                    />
+                                {/* </div> */}
                                 <h1 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
                                     CodeNest
                                 </h1>
